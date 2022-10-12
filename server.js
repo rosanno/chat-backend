@@ -24,6 +24,7 @@ const io = require('socket.io')(server, {
     origin: process.env.ORIGIN,
     methods: ['GET', 'POST'],
   },
+  maxHttpBufferSize: 1e8,
 });
 
 app.get('/rooms', (req, res) => {
