@@ -4,6 +4,8 @@ const userRoutes = require('./routes/userRoutes');
 const Message = require('./models/Message');
 const User = require('./models/User');
 
+require('dotenv').config();
+
 const app = express();
 
 const rooms = ['general', 'tech', 'finance', 'crypto'];
@@ -19,7 +21,7 @@ const server = require('http').createServer(app);
 const PORT = 5001;
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://127.0.0.1:3000',
+    origin: process.env.ORIGIN,
     methods: ['GET', 'POST'],
   },
 });
