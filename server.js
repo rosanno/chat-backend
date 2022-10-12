@@ -25,6 +25,7 @@ const io = require('socket.io')(server, {
     methods: ['GET', 'POST'],
   },
   maxHttpBufferSize: 1e8,
+  allowEIO3: true,
 });
 
 app.get('/rooms', (req, res) => {
