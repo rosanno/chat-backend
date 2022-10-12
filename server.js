@@ -12,7 +12,7 @@ const rooms = ['general', 'tech', 'finance', 'crypto'];
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors(process.env.ORIGIN));
+app.use(cors());
 
 app.use('/users', userRoutes);
 require('./config/connection');
